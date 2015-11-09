@@ -2,36 +2,57 @@
 /**
  * @package RED_Starter_Theme
 */
-get_header(); ?> 
-<p>this is product page</p>
+get_header(); ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		​
 		<?php if ( have_posts() ) : ?>
-		​
-		<header class="page-header">
-			<?php
-			the_archive_title( '<h1 class="page-title">', '</h1>' );
+
+		<header class="page-header center">
+			<?php the_archive_title( '<h1 class="product-page-title">', '</h1>' );
 			the_archive_description( '<div class="taxonomy-description">', '</div>' );
 			?>
 			<p class= "about-sub-heading"><?php echo esc_html( CFS()->get('sub-heading')); ?></p>
-		</header><!-- .page-header -->
-		​
+			
+			<hr class="decorative"></hr>
+		</header>
 
+		<div class="container">
 
-<div class="container">
-<div class="flex-products">
+			<div class="product-container">
+				<?php
+				$terms = get_terms("product-type");
+				if ($terms) {?>
+				<ul class="product-type">
+					<?php foreach($terms as $term) { ?>
+					<li class="product">
+						<img src="<?php echo get_template_directory_uri() ?>/images/<?php echo $term->slug ?>.png"
+						alt="<?php echo $term->slug ?>">
+						<h3><a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name ?> </a></h3>
+						
+						
+					</p>
+				</li>
+				<?php
+			}
+		} ?>
+	</div>
+
+	<div class="flex-products">
 
 		<?php /* Start the Loop */ ?>
-		<div class="grid-item">
-		<?php while ( have_posts() ) : the_post(); ?>
 		
+		<?php while ( have_posts() ) : the_post(); ?>
+		<div class="product-grid-item">
 			<?php if ( has_post_thumbnail() ) : ?>
 			<?php the_post_thumbnail( 'small' ); ?>
-			<h1><?php the_title(); ?></h1>
+			<div class="product-grid-text ">
+				<span class="product-span-dots"><?php the_title(); ?></span>
+				
+				<span class="price"><?php echo esc_html( CFS()->get('price')); ?></span>
 			<?php endif; ?>
-			<p class="price">Price: <?php echo esc_html( CFS()->get('price')); ?></p>
 		</div>
+	</div>
+
 <?php endwhile; ?>
 
 
@@ -49,5 +70,5 @@ get_header(); ?>
 </main><!-- #main -->
 </div><!-- #primary -->
 ​
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

@@ -2,4 +2,438 @@
 # Page Templates
 --------------------------------------------------------------*/
 
+
+/*header*/
+
+.site-header{
+	background-color: #ffffff;
+	box-shadow:0 2px 3px 0 rgba(150,150,150,.25);
+}
+
+#masthead{
+	margin-top:2.25rem;
+	border-top: 1px solid $lrb_border_color;
+	border-bottom: 1px solid $lrb_border_color;
+}
+.container{
+	max-width: 1024px;
+	margin:0 auto;
+}
+
+#page {
+	margin-top:0;
+}
+
+.border-container{
+	border-bottom: 1px solid $lrb_border_color;
+}
+
+#remove-table{
+	display:inline;
+}
+
+.main-navigation{
+	display:flex;
+	justify-content: space-between;
+	background-color: #fff;
+    box-shadow: 0 2px 0px 0 rgba(150,150,150,.25);
+    width: 100%;
+    border-left:1px solid $lrb_border_color;
+}
+
+.main-navigation li{
+	font-family: $lrb_sub_font;
+	border-right: 1px solid $lrb_border_color;
+}
+.main-navigation li a {
+	padding: .75rem 1.5rem;
+	color:black;
+}
+
+.site-main{
+	background-color: #fff;
+}
+
+.search-submit{
+	background-color:#fff;
+	border:none;
+	box-shadow: none;
+	font-size: 14px;
+	color:#808080;
+
+}
+.navigation{
+	display:flex;
+	justify-content: space-between;
+	text-align: center
+}
+.current_page_item:after {
+	content: "";
+	background-color: #db272a;
+	display: block;
+	height: 3px;
+	margin-top: -3px;
+	width: 100%;
+}
+
+
+.blog-image{
+	min-height: 100%
+}
+
+.site-branding{
+	display:flex;
+	text-align: center;
+	margin:0 auto;
+	justify-content: space-between;
+	padding:1.5rem 0;
+	position: relative;
+	align-items: center;
+
+}
+.site-branding img{
+	width:300px;
+
+}
+
+
+.site-main{
+	display:block;
+}
+.logo{
+	max-width: 25vw;
+}
+
+
+.icons{ 
+	
+	display:flex;
+	align-items: center;
+	color:#808080;
+	list-style: none;
+	justify-content: center;
+	margin:0;
+
+
+}
+
+.icons i{
+	padding: 0;
+	text-align: center;
+	margin-left:1.5rem;
+}
+
+.search-field{
+	border:none;
+}
+
+
 /* Front page */
+
+.bread-background{
+	background: url(../../images/hero-bread.jpg) no-repeat center center;
+	height: 550px;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	margin:0;
+	padding:0;
+	color:white;
+	font-size: 6rem;
+	font-family:$lrb_main_font;
+	max-width: 100%;
+	border-top:1px solid $lrb_border_color;
+	margin-bottom: 3rem;
+}
+
+
+.blog-container1 ul{
+	margin:0;
+	padding:0;
+	border: 1px solid $lrb_border_color;
+}
+
+
+//Sidebar
+
+.page-formatting{
+	display:flex;
+	margin:0;
+
+
+}
+
+.sidebar-formatting {
+	width:20%
+}
+
+
+
+//Product formatting
+
+.product{
+	list-style: none;
+	flex-direction:row;
+	max-width: 22%;
+	margin:0 auto;
+}
+
+.product-type{
+	display:flex;	
+
+}
+
+.product-type a{
+	color:  #db272a;
+}
+
+.product-page-title{
+	padding-top:3rem;
+}
+
+.product img{
+	width:80%;
+}
+
+.product h3 a{
+	color:#400c0d;
+	text-align: center;
+	font-size:1.3rem;
+	text-transform: uppercase;
+	font-family: $lrb_main_font,sans-serif;
+}
+
+.product h3 a:hover{
+	text-decoration: underline;
+}
+
+
+//call to action
+
+.call-to-action{
+	background-color: $lrb_background_color;
+	text-align: center;
+	padding:1.5rem;
+	border: 1px solid $lrb_border_color;
+	margin-bottom:3rem;
+	display:flex;
+	justify-content: space-around;
+}
+
+.button{
+	background-color: #400c0d;
+	color:white;
+}
+
+
+//blog main page-break-inside: 
+.blog-container {
+	background-color:  $lrb_background_color;
+	border-top: 1px solid $lrb_border_color;
+	text-align: 0;
+}
+.blog-container1{
+	display:flex;	
+	margin:0;
+}
+.blog-container1 li{
+	list-style: none;
+	background-color:white;
+
+	flex: 1 0 25%;
+
+	margin:0;
+}
+
+
+.blog-container1 img{
+	left: 50%;
+	width:100%;
+	background-color:white;
+	border: 1px solid $lrb_border_color;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	height:auto;
+
+}
+.blog-image{
+	height:200px;
+	overflow:hidden;
+	position:relative;
+}
+
+.blog-text{
+	display: flex;
+	overflow:hidden;
+	flex-direction:row;
+	p{
+		margin-bottom:0;
+	}
+}
+
+.about-sub-heading{
+	margin-top: .5rem;
+	margin-bottom:3rem;
+	font-family: $lrb_main_font;
+	font-size:1rem;
+}
+
+.about-container{
+	display:flex;
+	justify-content: space-between;
+	font-family: $lrb_main_font;
+
+	h2{
+		margin:0;
+		font-size:1.6rem;
+	}
+	.about-tagline{
+		color: #a1a1a1;
+		margin-top: 0;
+
+	}
+}
+
+.about-block{
+	flex:0 1 47.5%;
+}
+
+.about-story{
+	font-family: $lrb_main_font;
+}
+
+hr.decorative {
+	border: none;
+	color: $lrb_border_color;
+	margin-bottom: 3rem;
+	max-width: 320px;
+	padding: 0;
+	width: 50%
+}
+
+hr.decorative:after{
+	background: 0 0;
+	content: '\f111';
+	display: inline-block;
+	font-family: FontAwesome;
+	font-size: 14.4px;
+	font-size: .9rem;
+	position: relative;
+	top: -.875em
+}
+
+.white-background{
+	background-color: #fff;
+	padding-top: 3rem;
+	padding-bottom:3rem;
+}
+.center{
+	text-align: center;	
+}
+
+h1{
+	font-size:2.1rem;
+	font-family: $lrb_main_font,sans-serif;
+	margin-bottom: 0.5rem;
+	text-transform: uppercase;
+	margin:0;
+}
+
+.heading-center{
+	text-align: center;
+	font-family: $lrb_main_font,sans-serif
+}
+
+///products page
+.flex-products{
+	display:flex;
+	margin:0;
+	flex-wrap:wrap;
+}
+
+.product-grid-item{
+	flex:0 1 25%;
+	border: 1px solid $lrb_border_color;
+	align:center;
+}
+
+
+.product-grid-text{
+	padding: .75rem 1rem;
+	overflow:hidden;
+}
+
+
+.product-span-dots{
+	background-color:white;
+	white-space: nowrap;
+	}
+
+
+.product-span-dots:before {
+	float:left;
+	width: 0;
+	white-space: nowrap;
+	content: ".........................................."
+}
+
+.price{
+	float: right;
+	background-color:white;
+}
+.product-page-title{
+	margin-top:0;
+}
+
+
+/*Footer*/
+
+footer{
+	background-color:#222222;
+
+}
+
+.footer-contact h3, .footer-hours h3{
+	color:#fff;
+}
+
+
+.footer-container {
+	color:white;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	width:100%;
+	padding-top:3rem;
+	padding-bottom:3rem;
+	p{
+
+		margin-bottom:.5rem;
+		padding-bottom:0;
+		margin-top:0;
+	}
+	img{
+	max-width: 250px;
+}
+
+}
+
+.footer-copyright p{
+	color:white;
+	background-color:#333333;
+	margin:0;
+	padding:1.5rem;
+	text-align: center; 
+	font-size: 0.8rem;
+	line-height: 1.5rem;
+	font-size:1rem;
+}
+
+h3{
+	font-family:"overlock";
+	font-size:1.2rem;
+	margin-bottom:0.5rem;
+	color: #400c0d;
+}

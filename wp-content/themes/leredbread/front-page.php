@@ -18,7 +18,7 @@ get_header(); ?>
  <?php
         $terms = get_terms("product-type");
         if ($terms) {?>
-            <ul class="product-type">
+            <ul class="product-type container">
             <?php foreach($terms as $term) { ?>
                 <li class="product">
                     <img src="<?php echo get_template_directory_uri() ?>/images/<?php echo $term->slug ?>.png"
@@ -33,15 +33,20 @@ get_header(); ?>
         } ?>
  </div>
 <div class="call-to-action container">
-All our products are made fresh daily from locally-sourced ingredients. Our menu is updated frequently. <a href="products" class="button"> See our Products</a> 
+<span>All our products are made fresh daily from locally-sourced ingredients. Our menu is updated frequently.</span> 
+<span> <a href="products" class="button"> See our Products</a> </span>
 </div>
 
 <div class="blog-container">
 
-<div class="container">
-	<p> OUR LATEST NEWS</p>
+<div class="container center">
+	<h2> OUR LATEST NEWS</h2>
 
+<hr class="decorative"></hr>
+</div>
+<div class="container">
 <div class="blog-container1 ">
+
 
 <?php
 		$args = array( 'posts_per_page' => 4);

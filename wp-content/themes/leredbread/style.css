@@ -337,65 +337,6 @@ big {
   font-size: 125%; }
 
 /*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-html {
-  box-sizing: border-box;
-  font-size: 16px;
-  font-size: 1rem; }
-
-*,
-*:before,
-*:after {
-  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  box-sizing: inherit; }
-
-body {
-  background: #fff;
-  /* Fallback for when there is no custom background color defined. */ }
-
-blockquote, q {
-  quotes: "" ""; }
-  blockquote:before, blockquote:after, q:before, q:after {
-    content: ""; }
-
-hr {
-  background-color: #ccc;
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em; }
-
-ul, ol {
-  margin: 0 0 1.5em 3em; }
-
-ul {
-  list-style: disc; }
-
-ol {
-  list-style: decimal; }
-
-li > ul,
-li > ol {
-  margin-bottom: 0;
-  margin-left: 1.5em; }
-
-dt {
-  font-weight: bold; }
-
-dd {
-  margin: 0 1.5em 1.5em; }
-
-img {
-  height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */ }
-
-table {
-  margin: 0 0 1.5em;
-  width: 100%; }
-
-/*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
 /* Buttons */
@@ -708,17 +649,93 @@ object {
   display: block; }
 
 /*--------------------------------------------------------------
-# Page Templates
+# Elements
 --------------------------------------------------------------*/
-/* Front page */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-size: 1rem; }
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit; }
+
+body {
+  background: #fff;
+  /* Fallback for when there is no custom background color defined. */ }
+
+blockquote, q {
+  quotes: "" ""; }
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: ""; }
+
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em; }
+
+ul, ol {
+  margin: 0 0 1.5em 3em; }
+
+ul {
+  list-style: disc; }
+
+ol {
+  list-style: decimal; }
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin: 0 1.5em 1.5em; }
+
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */ }
+
+table {
+  margin: 0 0 1.5em;
+  width: 100%; }
+
 * {
   box-sizing: border-box; }
 
 body {
-  background-color: #fafafa; }
+  background-color: #fafafa;
+  color: #404040; }
 
+a {
+  text-decoration: none;
+  padding: .75rem 1.5rem;
+  font-family: "Open Sans Web",sans-serif;
+  border-radius: 3px; }
+
+a:visited {
+  color: white; }
+
+fieldset {
+  border: none; }
+
+input[type=search] {
+  border: none; }
+
+/*--------------------------------------------------------------
+# Page Templates
+--------------------------------------------------------------*/
+/*header*/
 .site-header {
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  box-shadow: 0 2px 3px 0 rgba(150, 150, 150, 0.25); }
 
 #masthead {
   margin-top: 2.25rem;
@@ -735,6 +752,9 @@ body {
 .border-container {
   border-bottom: 1px solid #e1e1e1; }
 
+#remove-table {
+  display: inline; }
+
 .main-navigation {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -743,13 +763,12 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #fff;
-  border-top: 1px solid #e1e1e1;
-  box-shadow: 0 2px 3px 0 rgba(150, 150, 150, 0.25);
+  box-shadow: 0 2px 0px 0 rgba(150, 150, 150, 0.25);
   width: 100%;
-  border-bottom: 1px solid #e1e1e1; }
+  border-left: 1px solid #e1e1e1; }
 
 .main-navigation li {
-  font-family: 'open_sans';
+  font-family: "open_sans";
   border-right: 1px solid #e1e1e1; }
 
 .main-navigation li a {
@@ -758,6 +777,13 @@ body {
 
 .site-main {
   background-color: #fff; }
+
+.search-submit {
+  background-color: #fff;
+  border: none;
+  box-shadow: none;
+  font-size: 14px;
+  color: #808080; }
 
 .navigation {
   display: -webkit-flex;
@@ -768,30 +794,16 @@ body {
           justify-content: space-between;
   text-align: center; }
 
-#remove-table {
-  display: inline; }
+.current_page_item:after {
+  content: "";
+  background-color: #db272a;
+  display: block;
+  height: 3px;
+  margin-top: -3px;
+  width: 100%; }
 
-.bread-background {
-  background: url(../../images/hero-bread.jpg) no-repeat center center;
-  height: 550px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 0;
-  padding: 0;
-  color: white;
-  font-size: 6rem;
-  font-family: 'overlock';
-  max-width: 100%;
-  border-top: 1px solid #e1e1e1;
-  margin-bottom: 3rem; }
+.blog-image {
+  min-height: 100%; }
 
 .site-branding {
   display: -webkit-flex;
@@ -839,56 +851,39 @@ body {
 .search-field {
   border: none; }
 
-footer {
-  background-color: #222222; }
-
-.footer-container {
-  color: white;
+/* Front page */
+.bread-background {
+  background: url(../../images/hero-bread.jpg) no-repeat center center;
+  height: 550px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  width: 100%;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  padding-top: 3rem;
-  padding-bottom: 3rem; }
-
-.footer-container p {
-  margin-bottom: .5rem;
-  padding-bottom: 0;
-  margin-top: 0; }
-
-.footer-container img {
-  max-width: 250px; }
-
-.footer-copyright p {
-  color: white;
-  background-color: #333333;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0;
-  padding: 1.5rem;
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 1.5rem;
-  font-size: 1rem; }
-
-h3 {
+  padding: 0;
+  color: white;
+  font-size: 6rem;
   font-family: "overlock";
-  color: gray;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem; }
+  max-width: 100%;
+  border-top: 1px solid #e1e1e1;
+  margin-bottom: 3rem; }
+
+.blog-container1 ul {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #e1e1e1; }
 
 .page-formatting {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin: 0; }
-
-.content-area {
-  width: 70%; }
 
 .sidebar-formatting {
   width: 20%; }
@@ -904,15 +899,39 @@ h3 {
 .product-type {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
-  margin: 0; }
+  display: flex; }
+
+.product-type a {
+  color: #db272a; }
+
+.product-page-title {
+  padding-top: 3rem; }
+
+.product img {
+  width: 80%; }
+
+.product h3 a {
+  color: #400c0d;
+  text-align: center;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-family: "overlock", sans-serif; }
+
+.product h3 a:hover {
+  text-decoration: underline; }
 
 .call-to-action {
   background-color: #fafafa;
   text-align: center;
   padding: 1.5rem;
   border: 1px solid #e1e1e1;
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
 
 .button {
   background-color: #400c0d;
@@ -931,13 +950,22 @@ h3 {
 
 .blog-container1 li {
   list-style: none;
-  background-color: white; }
+  background-color: white;
+  -webkit-flex: 1 0 25%;
+      -ms-flex: 1 0 25%;
+          flex: 1 0 25%;
+  margin: 0; }
 
 .blog-container1 img {
   left: 50%;
-  max-width: none;
+  width: 100%;
   background-color: white;
-  border: 1px solid #e1e1e1; }
+  border: 1px solid #e1e1e1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  height: auto; }
 
 .blog-image {
   height: 200px;
@@ -952,6 +980,14 @@ h3 {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row; }
+  .blog-text p {
+    margin-bottom: 0; }
+
+.about-sub-heading {
+  margin-top: .5rem;
+  margin-bottom: 3rem;
+  font-family: "overlock";
+  font-size: 1rem; }
 
 .about-container {
   display: -webkit-flex;
@@ -959,9 +995,137 @@ h3 {
   display: flex;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  font-family: "overlock"; }
+  .about-container h2 {
+    margin: 0;
+    font-size: 1.6rem; }
+  .about-container .about-tagline {
+    color: #a1a1a1;
+    margin-top: 0; }
 
 .about-block {
   -webkit-flex: 0 1 47.5%;
       -ms-flex: 0 1 47.5%;
           flex: 0 1 47.5%; }
+
+.about-story {
+  font-family: "overlock"; }
+
+hr.decorative {
+  border: none;
+  color: #e1e1e1;
+  margin-bottom: 3rem;
+  max-width: 320px;
+  padding: 0;
+  width: 50%; }
+
+hr.decorative:after {
+  background: 0 0;
+  content: '\f111';
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 14.4px;
+  font-size: .9rem;
+  position: relative;
+  top: -.875em; }
+
+.white-background {
+  background-color: #fff;
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+
+.center {
+  text-align: center; }
+
+h1 {
+  font-size: 2.1rem;
+  font-family: "overlock", sans-serif;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  margin: 0; }
+
+.heading-center {
+  text-align: center;
+  font-family: "overlock", sans-serif; }
+
+.flex-products {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
+.product-grid-item {
+  -webkit-flex: 0 1 25%;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
+  border: 1px solid #e1e1e1;
+  align: center; }
+
+.product-grid-text {
+  padding: .75rem 1rem;
+  overflow: hidden; }
+
+.product-span-dots {
+  background-color: white;
+  white-space: nowrap; }
+
+.product-span-dots:before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  content: ".........................................."; }
+
+.price {
+  float: right;
+  background-color: white; }
+
+.product-page-title {
+  margin-top: 0; }
+
+/*Footer*/
+footer {
+  background-color: #222222; }
+
+.footer-contact h3, .footer-hours h3 {
+  color: #fff; }
+
+.footer-container {
+  color: white;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+  .footer-container p {
+    margin-bottom: .5rem;
+    padding-bottom: 0;
+    margin-top: 0; }
+  .footer-container img {
+    max-width: 250px; }
+
+.footer-copyright p {
+  color: white;
+  background-color: #333333;
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  font-size: 1rem; }
+
+h3 {
+  font-family: "overlock";
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #400c0d; }

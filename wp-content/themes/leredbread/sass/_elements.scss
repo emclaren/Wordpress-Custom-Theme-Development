@@ -68,3 +68,35 @@ table {
 	margin: 0 0 $base__space-unit;
 	width: 100%;
 }
+
+
+//Le RED Bread Styling
+
+*{
+	box-sizing:border-box;
+}
+
+body{	
+background-color: $lrb_background_color;
+color:#404040
+}
+
+a{
+	text-decoration: none;
+	padding: .75rem 1.5rem;
+	font-family:"Open Sans Web",sans-serif;
+	border-radius:3px;
+}
+
+a:visited{
+	color:white;
+}
+
+
+fieldset{
+	border:none;
+}
+input[type=search]{
+	border:none;
+}
+
